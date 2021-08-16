@@ -20,6 +20,17 @@ class Aluno:
         return f"Aluno {self._nome} {self._sobrenome} matriculado"
 
 
+class Professor:
+
+    def set_nome(self, nome):
+        self._nome = nome
+
+    def get_nome(self):
+        return self._nome
+
 aluno = Aluno("Antonio", "Silva")
 print(aluno.matricular())
 
+professor = Professor()
+professor.set_nome("Marco")
+print(professor.get_nome())
