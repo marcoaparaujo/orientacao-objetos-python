@@ -1,5 +1,11 @@
 class Aluno:
 
+    def __init__(self, nome, sobrenome, nota1, nota2):
+        self.nome = nome
+        self.sobrenome = sobrenome
+        self.nota1 = nota1
+        self.nota2 = nota2
+
     def setNome(self, nome):
         self.nome = nome
 
@@ -11,9 +17,6 @@ class Aluno:
 
     def getSobrenome(self):
         return self.sobrenome
-
-    def getNomeCompleto(self):
-        return self.nome + " " + self.sobrenome
 
     def setNota1(self, nota1):
         self.nota1 = nota1
@@ -27,6 +30,9 @@ class Aluno:
     def getNota2(self):
         return self.nota2
 
+    def getNomeCompleto(self):
+        return self.nome + " " + self.sobrenome
+
     def getSomaNotas(self):
         return self.nota1 + self.nota2
 
@@ -34,22 +40,16 @@ class Aluno:
         return (self.nota1 + self.nota2) / 2
 
 
-aluno = Aluno()
-aluno.setNome("João")
-aluno.setSobrenome("Reis")
-aluno.setNota1(80)
-aluno.setNota2(60)
+nome = input("Digite o nome do aluno: ")
+sobrenome = input("Digite o sobrenome do aluno: ")
+nota1 = int(input("Digite a primeira nota do aluno: "))
+nota2 = int(input("Digite a segunda nota do aluno: "))
 
-aluno2 = Aluno()
-aluno2.setNome("Ana")
-aluno2.setSobrenome("Machado")
-aluno2.setNota1(90)
-aluno2.setNota2(80)
+aluno = Aluno(nome, sobrenome, nota1, nota2)
 
 print(f"Nome  = {aluno.getNomeCompleto()}")
 print(f"Soma  = {aluno.getSomaNotas()}")
 print(f"Média = {aluno.getMediaNotas()}")
-print()
-print(f"Nome  = {aluno2.getNomeCompleto()}")
-print(f"Soma  = {aluno2.getSomaNotas()}")
-print(f"Média = {aluno2.getMediaNotas()}")
+
+
+
